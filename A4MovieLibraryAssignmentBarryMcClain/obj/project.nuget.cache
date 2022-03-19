@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "FZcwxNpW+MWPBTie3T/YVPLozAdESZXjeaSjMCfi1zSsdqxIzF9cYiRQ2uLwxwqhWRIc9lkM43hPKATsURXGFA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.configuration.binder\\5.0.0\\microsoft.extensions.configuration.binder.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.logging.configuration\\5.0.0\\microsoft.extensions.logging.configuration.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.logging.console\\5.0.0\\microsoft.extensions.logging.console.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\5.0.0\\microsoft.extensions.options.configurationextensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
