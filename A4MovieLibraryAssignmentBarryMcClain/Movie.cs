@@ -1,18 +1,21 @@
 using System;
 using System.Collections.Generic;
 using A4MovieLibraryAssignmentBarryMcClain;
+using CsvHelper.Configuration.Attributes;
 
 namespace A4MovieLibraryAssignmentBarryMcClain
 {
     public class Movie
     {
 
-        private string movieId;
+        [Name("movieId")]
+        public string movieId { get; set; }
 
-        public string title; 
+        [Name("title")]
+        public string title { get; set; }
 
-
-        private string genres;
+        [Name("genres")]
+        public string genres { get; set; }
 
 
         public Movie(string x, string y, string z)

@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\TestA4\\TestA4.csproj": {}
+    "C:\\Users\\051686\\RiderProjects\\learning\\TestA4\\TestA4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {
+    "C:\\Users\\051686\\RiderProjects\\learning\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
+        "projectUniqueName": "C:\\Users\\051686\\RiderProjects\\learning\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
         "projectName": "A4MovieLibraryAssignmentBarryMcClain",
-        "projectPath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
+        "projectPath": "C:\\Users\\051686\\RiderProjects\\learning\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
         "packagesPath": "C:\\Users\\051686\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\obj\\",
+        "outputPath": "C:\\Users\\051686\\RiderProjects\\learning\\A4MovieLibraryAssignmentBarryMcClain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\051686\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\051686\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -38,6 +40,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[30.0.1, )"
+            },
             "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
               "version": "[5.0.0, )"
@@ -49,43 +55,64 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\051686\\.dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\TestA4\\TestA4.csproj": {
+    "C:\\Users\\051686\\RiderProjects\\learning\\TestA4\\TestA4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\TestA4\\TestA4.csproj",
+        "projectUniqueName": "C:\\Users\\051686\\RiderProjects\\learning\\TestA4\\TestA4.csproj",
         "projectName": "TestA4",
-        "projectPath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\TestA4\\TestA4.csproj",
+        "projectPath": "C:\\Users\\051686\\RiderProjects\\learning\\TestA4\\TestA4.csproj",
         "packagesPath": "C:\\Users\\051686\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\TestA4\\obj\\",
+        "outputPath": "C:\\Users\\051686\\RiderProjects\\learning\\TestA4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\051686\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\051686\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {
-                "projectPath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj"
+              "C:\\Users\\051686\\RiderProjects\\learning\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {
+                "projectPath": "C:\\Users\\051686\\RiderProjects\\learning\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj"
               }
             }
           }
@@ -127,16 +154,31 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\051686\\.dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

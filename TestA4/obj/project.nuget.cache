@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "hBWrw/rO9z6zoQF5bYAOQh93OpAe2XWzgr4n18seoidrvD9Br0KGcbNycyqmO9cnr68thlN6/f1lg9jeiYghow==",
+  "dgSpecHash": "OJSR6QMcNuhwdtsMAKGjRfohllLRw1maRBWIOIUengWykyGtv8lZflQj9T/2PCDz2vfBiUut8f0rmyRxW3QBkQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\051686\\RiderProjects\\A4MovieLibraryAssignmentBarryMcClain\\TestA4\\TestA4.csproj",
+  "projectFilePath": "C:\\Users\\051686\\RiderProjects\\learning\\TestA4\\TestA4.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\051686\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\051686\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
     "C:\\Users\\051686\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",
@@ -107,7 +108,10 @@
     "C:\\Users\\051686\\.nuget\\packages\\xunit.core\\2.4.1\\xunit.core.2.4.1.nupkg.sha512",
     "C:\\Users\\051686\\.nuget\\packages\\xunit.extensibility.core\\2.4.1\\xunit.extensibility.core.2.4.1.nupkg.sha512",
     "C:\\Users\\051686\\.nuget\\packages\\xunit.extensibility.execution\\2.4.1\\xunit.extensibility.execution.2.4.1.nupkg.sha512",
-    "C:\\Users\\051686\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512"
+    "C:\\Users\\051686\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.3\\xunit.runner.visualstudio.2.4.3.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\051686\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
