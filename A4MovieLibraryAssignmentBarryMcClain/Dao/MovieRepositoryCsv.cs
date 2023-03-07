@@ -26,12 +26,52 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
 
 
-        public List<string> movieList = new List<string>();
+        //public List<string> movieList = new List<string>();
         public List<Movie> listOfMovieObjects = new List<Movie>();
+        public List<Video> listOfVideoObjects = new List<Video>();
+        public List<Show> listOfShowObjects = new List<Show>();
 
         public void Run()
         {
-            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+
+            listOfMovieObjects.Add(new Movie() {Id = 0, Title = "Mission Impossible", genres = new[] {"Action", "Adventure"}});
+            listOfMovieObjects.Add(new Movie() {Id = 1, Title = "Toy Story (1995)", genres = new[] {"Action", "Horror"}});
+            listOfMovieObjects.Add(new Movie() {Id = 2, Title = "Jumanji (1995)", genres = new[] {"Adventure", "Children"}});
+            listOfMovieObjects.Add(new Movie() {Id = 3, Title = "Grumpier Old Men (1995)", genres = new[] {"Comedy", "Romance"}});
+            listOfMovieObjects.Add(new Movie() {Id = 4, Title = "Waiting to Exhale (1995)", genres = new[] {"Comedy", "Fantasy", "Drama"}});
+            listOfMovieObjects.Add(new Movie() {Id = 5, Title = "Father of the Bride Part II (1995)", genres = new[] {"Comedy"}});
+        
+            
+            listOfShowObjects.Add(new Show() { Id= 0, Title = "Law & Order", Season = 5,Episode = 35,Writers = new[] {"Wolf"}});
+            listOfShowObjects.Add(new Show() {Id = 1, Title = "Supernatural", Season = 2,Episode = 12,Writers = new[] {"Kripke"} });
+
+            listOfVideoObjects.Add(new Video() { Id= 0, Title = "Coding",format = "YouTube, DVD, BluRay",length = 30,regions =new[] {0,1}});
+            listOfVideoObjects.Add(new Video() {Id = 1, Title = "Lethal Weapon 2",format = "VHS, DVD, BluRay",length = 100,regions =new[] {0,2}  });
+            listOfVideoObjects.Add(new Video() {Id = 2, Title = "Lethal Weapon 3",format = "VHS, DVD, BluRay",length = 123,regions =new[] {0,2}});
+            
+            StreamWriter sw = new StreamWriter("Files/movies.csv", true);
+            foreach (Movie movie in listOfMovieObjects)
+            {
+                sw.WriteLine(movie.ToString());
+            }
+            sw.Close();
+            sw = new StreamWriter("Files/shows.csv", true);
+            foreach (Show show in listOfShowObjects)
+            {
+                sw.WriteLine(show.ToString());
+            }
+            sw.Close();   
+            
+            sw = new StreamWriter("Files/videos.csv", true);
+            foreach (Video video in listOfVideoObjects)
+            {
+                sw.WriteLine(video.ToString());
+            }
+            sw.Close();
+            
+            
+            
+            /*var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = false,
             };
@@ -43,45 +83,107 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                     listOfMovieObjects = csvReader.GetRecords<Movie>().ToList();
                     streamReader.Close();
                 }
-            }
+            }*/
         }
         
 
-        public void AddMovie(String movieId, String title, String genres)
+        public void AddMovie(int movieId, string title, string[] genres)
         {
-            Movie newMovie = new Movie(movieId, title, genres);
-            listOfMovieObjects.Add(newMovie);
-            movieList.Add(newMovie.ToString());
+            //Movie newMovie = new Movie(movieId, title, genres);
+            //listOfMovieObjects.Add(newMovie);
+            //movieList.Add(newMovie.ToString());
         }
 
         public void Get()
         {
             string controller = "";
-            int movieCount = 0;
+            int mediaCount = 0;
             int count = 100;
 
-            while (controller != "q" && movieCount < listOfMovieObjects.Count-count)
+            List<Media> media = new List<Media>();
+
+
+            char addMovie = 'a';
+            char addShow = 'a';
+            var addVideo = 'a';
+            
+            Console.WriteLine("Answer the Following prompts for media display");
+            Console.WriteLine("Please enter y if you want to include movies");
+            Console.WriteLine("Otherwise enter n to skip");
+            try
             {
-                List<Movie> output = listOfMovieObjects.GetRange(movieCount, count);
-                foreach (Movie movie in output)
+                addMovie = Console.ReadLine().ToLower()[0];
+                if (addMovie == 'y')
                 {
-                    Console.WriteLine(movie);
+                    media.AddRange(listOfMovieObjects);
+                }
+
+            }
+            catch (Exception e)
+            {
+               
+            }
+
+            
+        
+            Console.WriteLine("Please enter y if you want to include shows");
+            Console.WriteLine("Otherwise enter n to skip");
+            try
+            {
+                addShow = Console.ReadLine().ToLower()[0];
+                if (addShow == 'y')
+                {
+                    media.AddRange(listOfShowObjects);
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+
+            
+      
+            Console.WriteLine("Please enter y if you want to include videos");
+            Console.WriteLine("Otherwise enter n to skip");
+            try
+            {
+                addVideo = Console.ReadLine().ToLower()[0];
+                if (addVideo == 'y')
+                {
+                    media.AddRange(listOfVideoObjects);
+                }
+            }
+            catch (Exception e)
+            {
+                
+            }
+ 
+            
+            
+            while (controller != "q" && mediaCount < media.Count-count)
+            {
+                List<Media> output = media.GetRange(mediaCount, count);
+                foreach (Media mediaItem in output)
+                {
+                    Console.WriteLine(mediaItem);
                 }
 
                 Console.WriteLine($"To show next 100, press Enter. To quit, press q.");
-                movieCount += 100;
+                mediaCount += 100;
 
                 controller = Console.ReadLine().ToLower();
             }
 
-            if (listOfMovieObjects.Count-movieCount < count)
+            if (media.Count-mediaCount < count)
             {
-                List<Movie> lastoutput = listOfMovieObjects.GetRange(movieCount, listOfMovieObjects.Count-movieCount);
-                foreach (Movie movie in lastoutput)
+                List<Media> lastoutput = media.GetRange(mediaCount, media.Count-mediaCount);
+                foreach (var mediaItem in lastoutput)
                 {
-                    Console.WriteLine(movie);
+
+                    mediaItem.Display();
+
                 }
-                Console.WriteLine($"End of List");
+                Console.WriteLine($"End of List(s)");
             }
             
         }
@@ -122,7 +224,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                 titleFormat = title;
             }
 
-            while (listOfMovieObjects.FirstOrDefault(o => o.title == titleFormat) != null)
+            while (listOfMovieObjects.FirstOrDefault(o => o.Title == titleFormat) != null)
             {
                 Console.WriteLine("\n\n");
                 Console.WriteLine("Duplicate Movie. Enter Title: ");
@@ -159,47 +261,25 @@ namespace A4MovieLibraryAssignmentBarryMcClain
             }
 
             string newMovie = nextMovieId + "," + titleFormat + "," + genre;
-            AddMovie(nextMovieIdString, titleFormat, genre);
+            //AddMovie(nextMovieIdString, titleFormat, genre);
             /*Movie writeMovie = new Movie( nextMovieIdString,  titleFormat, genre);
             var writeMovieList = new List<Movie>();
             writeMovieList.Add(writeMovie);*/
-            string path = "Files/movies.csv";
-            StreamWriter sw = File.AppendText(path);
+            /*string path = "Files/movies.csv";
+            StreamWriter sw = File.AppendText(path);*/
             try
             {
 
-                using (sw)
-                {
-                    sw.WriteLine(newMovie);
-
-                }
-
-                /*using (var writer = new StreamWriter("Files/movies.csv"))
-                using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
-                {
-                    csv.WriteRecords(writeMovieList);
-                    
-                }*/
-
-                /*FileStream file = new FileStream("Files/movies.csv", FileMode.Append, FileAccess.Write);
-                StreamWriter sw = new StreamWriter(file);
-           
-                newMovie = nextMovieId + "," + titleFormat + "," + genre;q
-
-*/
-
-
+                StreamWriter sw = new StreamWriter("Files/movies.csv", true);
+                newMovie = nextMovieId + "," + titleFormat + "," + genre;
+                sw.WriteLine(newMovie);
+                sw.Close();
+                        
             }
             catch (Exception e)
             {
                 Console.WriteLine("Error with writing file");
                 throw;
-            }
-            finally
-            {
-                sw.Flush();
-                sw.Close();
-                //file.Close();
             }
 
             Console.WriteLine($"New Movie Add: {newMovie}");

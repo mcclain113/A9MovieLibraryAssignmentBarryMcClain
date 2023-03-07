@@ -2,7 +2,7 @@ using A4MovieLibraryAssignmentBarryMcClain.Dao;
 
 namespace A4MovieLibraryAssignmentBarryMcClain;
 
-public class MovieMenuGenerator : IMenuGenerator
+public class MediaMenuGenerator : IMenuGenerator
 {
     public void Menu(IRepository app)
     {
@@ -14,8 +14,8 @@ public class MovieMenuGenerator : IMenuGenerator
 
             app.Run();
             Console.WriteLine("Welcome to the Movie Library Menu");
-            Console.WriteLine("1. List All Movies in the File");
-            Console.WriteLine("2. Add Movie to the File");
+            Console.WriteLine("1. Enter 1 to display movies by type");
+           // Console.WriteLine("2. Add Movie to the File");
             Console.WriteLine(".........................................");
             Console.Write("Please Enter Menu Number (q for quit): ");
             
@@ -30,7 +30,7 @@ public class MovieMenuGenerator : IMenuGenerator
 
                         else if (menuAnswer == '2')
                         {
-                            app.Add();
+                            app.Exit();
                 
                         }
                         else if (menuAnswer == 'q')

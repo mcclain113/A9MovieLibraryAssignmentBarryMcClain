@@ -28,7 +28,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
 
         public List<string> movieList = new List<string>();
-        public List<Movie> listOfMovieObjects = new List<Movie>();
+        public List<Media> listOfMovieObjects = new List<Media>();
 
         public void Run()
         {
@@ -47,7 +47,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
             }*/
             
             string json = File.ReadAllText("Files/movies.json");
-            listOfMovieObjects = JsonConvert.DeserializeObject<List<Movie>>(json);
+            listOfMovieObjects = JsonConvert.DeserializeObject<List<Media>>(json);
             
             
         }
@@ -55,9 +55,9 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
         public void AddMovie(String movieId, String title, String genres)
         {
-            Movie newMovie = new Movie(movieId, title, genres);
-            listOfMovieObjects.Add(newMovie);
-            movieList.Add(newMovie.ToString());
+            //Movie newMovie = new Movie(movieId, title, genres);
+           // listOfMovieObjects.Add(newMovie);
+            //movieList.Add(newMovie.ToString());
         }
 
         public void Get()
@@ -68,7 +68,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
             while (controller != "q" && movieCount < listOfMovieObjects.Count-count)
             {
-                List<Movie> output = listOfMovieObjects.GetRange(movieCount, count);
+                List<Media> output = listOfMovieObjects.GetRange(movieCount, count);
                 foreach (Movie movie in output)
                 {
                     Console.WriteLine(movie);
@@ -82,7 +82,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
             if (listOfMovieObjects.Count-movieCount < count)
             {
-                List<Movie> lastoutput = listOfMovieObjects.GetRange(movieCount, listOfMovieObjects.Count-movieCount);
+                List<Media> lastoutput = listOfMovieObjects.GetRange(movieCount, listOfMovieObjects.Count-movieCount);
                 foreach (Movie movie in lastoutput)
                 {
                     Console.WriteLine(movie);
@@ -109,7 +109,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
             ;
             string movieId = columnSplitForId[0];*/
 
-          string movieId =  listOfMovieObjects.LastOrDefault().movieId;
+          int movieId =  listOfMovieObjects.LastOrDefault().Id;
             int nextMovieId = Convert.ToInt32(movieId) + 1;
             string nextMovieIdString = nextMovieId.ToString();
 
@@ -130,7 +130,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                 titleFormat = title;
             }
 
-            while (listOfMovieObjects.FirstOrDefault(o => o.title == titleFormat) != null)
+            while (listOfMovieObjects.FirstOrDefault(o => o.Title == titleFormat) != null)
             {
                 Console.WriteLine("\n\n");
                 Console.WriteLine("Duplicate Movie. Enter Title: ");
@@ -168,7 +168,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
             string newMovie = nextMovieId + "," + titleFormat + "," + genre;
             AddMovie(nextMovieIdString, titleFormat, genre);
-            Movie writeMovie = new Movie( nextMovieIdString,  titleFormat, genre);
+           // Movie writeMovie = new Movie( nextMovieIdString,  titleFormat, genre);
            // var writeMovieList = new List<Movie>();
             //writeMovieList.Add(writeMovie);
            // string path = "Files/movies.csv";
@@ -181,8 +181,8 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                 // Read existing json data
                 var jsonData = System.IO.File.ReadAllText(json);
                 // De-serialize to object or create new list
-                listOfMovieObjects = JsonConvert.DeserializeObject<List<Movie>>(jsonData);
-                listOfMovieObjects.Add(writeMovie);
+                listOfMovieObjects = JsonConvert.DeserializeObject<List<Media>>(jsonData);
+                //listOfMovieObjects.Add(writeMovie);
                 // Update json data string
                 jsonData = JsonConvert.SerializeObject(listOfMovieObjects);
                 System.IO.File.WriteAllText(json, jsonData);

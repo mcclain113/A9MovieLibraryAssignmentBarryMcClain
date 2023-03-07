@@ -11,9 +11,9 @@ public class Startup
         IServiceCollection services = new ServiceCollection();
         //services.AddSingleton<>();
         services.AddSingleton<IMainService, MainServices>();
-        services.AddSingleton<IRepository, MovieRepositoryJson>();
-        //services.AddSingleton<IRepository, MovieRepositoryCsv>();
-        services.AddSingleton<IMenuGenerator,MovieMenuGenerator >();
+        //services.AddSingleton<IRepository, MovieRepositoryJson>();
+        services.AddSingleton<IRepository, MovieRepositoryCsv>();
+        services.AddSingleton<IMenuGenerator,MediaMenuGenerator >();
         return services.BuildServiceProvider();
     }
 }

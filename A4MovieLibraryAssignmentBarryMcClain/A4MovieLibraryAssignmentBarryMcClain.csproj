@@ -35,4 +35,13 @@
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </EmbeddedResource>
     </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\A4MovieLibraryAssignmentBarryMcClain\A4MovieLibraryAssignmentBarryMcClain\Files\shows.csv">
+        <Link>Files\shows.csv</Link>
+      </Content>
+      <Content Include="..\..\A4MovieLibraryAssignmentBarryMcClain\A4MovieLibraryAssignmentBarryMcClain\Files\videos.csv">
+        <Link>Files\videos.csv</Link>
+      </Content>
+    </ItemGroup>
 </Project>
