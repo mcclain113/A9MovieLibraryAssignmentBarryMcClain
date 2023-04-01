@@ -98,6 +98,8 @@ namespace A4MovieLibraryAssignmentBarryMcClain
             media.AddRange(movies);
             media.AddRange(shows);
             media.AddRange(videos);
+
+            var mediaNumber = media.Count;
             
             while (controller != "q" && mediaCount < media.Count-count)
             {
@@ -122,9 +124,10 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                     Console.WriteLine($"Your {mediaItem.GetType().Name}: {mediaItem.Title}");
 
                 }
-                Console.WriteLine($"End of List(s)");
+                
             }
-            
+            Console.WriteLine($"Number of matching results: {mediaNumber}");
+            Console.WriteLine($"End of List");
         }
 
 
