@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NqyATVl+oHm2sKpVxww/mtkTtrP9dyk//TeaRltbZGi/mCnC6VJjake32eowrgTGxB/5w+1dY1FpMW0BMHZ1ZQ==",
+  "dgSpecHash": "NBSz87+swkBC7BJjCmMa8fZ+tked+K2chzp7zhQU7ML9mwFp1463zNlQs3Mc9Zax5JPJb3ARBlmIvZpgGfkRuw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\051686\\RiderProjects\\A6MovieLibraryAssignment\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
+  "projectFilePath": "C:\\Users\\051686\\RiderProjects\\A9MovieLibraryAssignment - Linq\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\051686\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\051686\\.nuget\\packages\\microsoft.extensions.configuration\\5.0.0\\microsoft.extensions.configuration.5.0.0.nupkg.sha512",

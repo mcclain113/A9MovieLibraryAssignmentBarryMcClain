@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\051686\\RiderProjects\\A6MovieLibraryAssignment\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {}
+    "C:\\Users\\051686\\RiderProjects\\A9MovieLibraryAssignment - Linq\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\051686\\RiderProjects\\A6MovieLibraryAssignment\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {
+    "C:\\Users\\051686\\RiderProjects\\A9MovieLibraryAssignment - Linq\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\051686\\RiderProjects\\A6MovieLibraryAssignment\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
+        "projectUniqueName": "C:\\Users\\051686\\RiderProjects\\A9MovieLibraryAssignment - Linq\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
         "projectName": "A4MovieLibraryAssignmentBarryMcClain",
-        "projectPath": "C:\\Users\\051686\\RiderProjects\\A6MovieLibraryAssignment\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
+        "projectPath": "C:\\Users\\051686\\RiderProjects\\A9MovieLibraryAssignment - Linq\\A4MovieLibraryAssignmentBarryMcClain\\A4MovieLibraryAssignmentBarryMcClain.csproj",
         "packagesPath": "C:\\Users\\051686\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\051686\\RiderProjects\\A6MovieLibraryAssignment\\A4MovieLibraryAssignmentBarryMcClain\\obj\\",
+        "outputPath": "C:\\Users\\051686\\RiderProjects\\A9MovieLibraryAssignment - Linq\\A4MovieLibraryAssignmentBarryMcClain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\051686\\AppData\\Roaming\\NuGet\\NuGet.Config",

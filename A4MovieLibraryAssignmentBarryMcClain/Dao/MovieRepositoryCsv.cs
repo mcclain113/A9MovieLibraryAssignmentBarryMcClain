@@ -15,7 +15,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
     public class MovieRepositoryCsv : IRepository
     {
 
-        
+        Context context = new Context();
 
         public void Exit()
         {
@@ -26,44 +26,28 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
 
 
-        //public List<string> movieList = new List<string>();
-        public List<Movie> listOfMovieObjects = new List<Movie>();
-        public List<Video> listOfVideoObjects = new List<Video>();
-        public List<Show> listOfShowObjects = new List<Show>();
+
 
         public void Run()
         {
 
-            listOfMovieObjects.Add(new Movie() {Id = 0, Title = "Mission Impossible", genres = new[] {"Action", "Adventure"}});
-            listOfMovieObjects.Add(new Movie() {Id = 1, Title = "Toy Story (1995)", genres = new[] {"Action", "Horror"}});
-            listOfMovieObjects.Add(new Movie() {Id = 2, Title = "Jumanji (1995)", genres = new[] {"Adventure", "Children"}});
-            listOfMovieObjects.Add(new Movie() {Id = 3, Title = "Grumpier Old Men (1995)", genres = new[] {"Comedy", "Romance"}});
-            listOfMovieObjects.Add(new Movie() {Id = 4, Title = "Waiting to Exhale (1995)", genres = new[] {"Comedy", "Fantasy", "Drama"}});
-            listOfMovieObjects.Add(new Movie() {Id = 5, Title = "Father of the Bride Part II (1995)", genres = new[] {"Comedy"}});
-        
             
-            listOfShowObjects.Add(new Show() { Id= 0, Title = "Law & Order", Season = 5,Episode = 35,Writers = new[] {"Wolf"}});
-            listOfShowObjects.Add(new Show() {Id = 1, Title = "Supernatural", Season = 2,Episode = 12,Writers = new[] {"Kripke"} });
-
-            listOfVideoObjects.Add(new Video() { Id= 0, Title = "Coding",format = "YouTube, DVD, BluRay",length = 30,regions =new[] {0,1}});
-            listOfVideoObjects.Add(new Video() {Id = 1, Title = "Lethal Weapon 2",format = "VHS, DVD, BluRay",length = 100,regions =new[] {0,2}  });
-            listOfVideoObjects.Add(new Video() {Id = 2, Title = "Lethal Weapon 3",format = "VHS, DVD, BluRay",length = 123,regions =new[] {0,2}});
             
             StreamWriter sw = new StreamWriter("Files/movies.csv", true);
-            foreach (Movie movie in listOfMovieObjects)
+            foreach (Movie movie in context.listOfMovieObjects)
             {
                 sw.WriteLine(movie.ToString());
             }
             sw.Close();
             sw = new StreamWriter("Files/shows.csv", true);
-            foreach (Show show in listOfShowObjects)
+            foreach (Show show in context.listOfShowObjects)
             {
                 sw.WriteLine(show.ToString());
             }
             sw.Close();   
             
             sw = new StreamWriter("Files/videos.csv", true);
-            foreach (Video video in listOfVideoObjects)
+            foreach (Video video in context.listOfVideoObjects)
             {
                 sw.WriteLine(video.ToString());
             }
@@ -102,70 +86,25 @@ namespace A4MovieLibraryAssignmentBarryMcClain
 
             List<Media> media = new List<Media>();
 
-
-            char addMovie = 'a';
-            char addShow = 'a';
-            var addVideo = 'a';
-            
-            Console.WriteLine("Answer the Following prompts for media display");
-            Console.WriteLine("Please enter y if you want to include movies");
-            Console.WriteLine("Otherwise enter n to skip");
-            try
-            {
-                addMovie = Console.ReadLine().ToLower()[0];
-                if (addMovie == 'y')
-                {
-                    media.AddRange(listOfMovieObjects);
-                }
-
-            }
-            catch (Exception e)
-            {
-               
-            }
-
-            
-        
-            Console.WriteLine("Please enter y if you want to include shows");
-            Console.WriteLine("Otherwise enter n to skip");
-            try
-            {
-                addShow = Console.ReadLine().ToLower()[0];
-                if (addShow == 'y')
-                {
-                    media.AddRange(listOfShowObjects);
-                }
-            }
-            catch (Exception e)
-            {
-                
-            }
-
-            
-      
-            Console.WriteLine("Please enter y if you want to include videos");
-            Console.WriteLine("Otherwise enter n to skip");
-            try
-            {
-                addVideo = Console.ReadLine().ToLower()[0];
-                if (addVideo == 'y')
-                {
-                    media.AddRange(listOfVideoObjects);
-                }
-            }
-            catch (Exception e)
-            {
-                
-            }
+            Console.WriteLine("Enter what title are you searching for");
+            var searchString = Console.ReadLine();
+            List<Movie> movies = context.listOfMovieObjects.Where(movie =>
+                movie.Title.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            List<Show> shows = context.listOfShowObjects
+                .Where(show => show.Title.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            List<Video> videos = context.listOfVideoObjects.Where(video =>
+                video.Title.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
  
-            
+            media.AddRange(movies);
+            media.AddRange(shows);
+            media.AddRange(videos);
             
             while (controller != "q" && mediaCount < media.Count-count)
             {
                 List<Media> output = media.GetRange(mediaCount, count);
                 foreach (Media mediaItem in output)
                 {
-                    Console.WriteLine(mediaItem);
+                    Console.WriteLine($"Your {mediaItem.GetType().Name}: {mediaItem.Title}");
                 }
 
                 Console.WriteLine($"To show next 100, press Enter. To quit, press q.");
@@ -180,7 +119,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                 foreach (var mediaItem in lastoutput)
                 {
 
-                    mediaItem.Display();
+                    Console.WriteLine($"Your {mediaItem.GetType().Name}: {mediaItem.Title}");
 
                 }
                 Console.WriteLine($"End of List(s)");
@@ -224,7 +163,7 @@ namespace A4MovieLibraryAssignmentBarryMcClain
                 titleFormat = title;
             }
 
-            while (listOfMovieObjects.FirstOrDefault(o => o.Title == titleFormat) != null)
+            while (context.listOfMovieObjects.FirstOrDefault(o => o.Title == titleFormat) != null)
             {
                 Console.WriteLine("\n\n");
                 Console.WriteLine("Duplicate Movie. Enter Title: ");
